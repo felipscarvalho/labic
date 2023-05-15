@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Labic - Projetos</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Olá</h1>
+    <a href="{% url 'home' %}">Início</a>
+
+    <script>
+        document.querySelector('#projects-blank').style.display = 'inline';
+        document.querySelector('#projects').style.display = 'inline';
+        document.querySelector('#projects-li').style.justifyContent = 'space-between';
+    </script>
+{% endblock %}

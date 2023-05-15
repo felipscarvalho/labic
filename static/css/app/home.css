@@ -1,0 +1,133 @@
+.home_container {
+    margin: 0 16%;
+}
+
+/* Hero */
+.home_hero {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 4rem;
+    padding: 2rem 0;
+}
+
+.home_hero_right_image {
+    max-width: 100%;
+    height: auto;
+}
+
+.home_hero_left_title {
+    margin: 8px 0;
+}
+
+.home_hero_left_text {
+    margin: 8px 0;
+}
+
+.home_hero_left_button {
+    margin: 8px 0;
+}
+
+/* Who We Are */
+
+.home_who_we_are {
+    display: flex;
+    flex-direction: column;
+    gap: .5rem;
+    align-items: center;
+    padding: 2rem 0;
+}
+
+/* Trhee Topics */
+
+.home_three_topics {
+    display: flex;
+    gap: 2rem;
+    padding: 2rem 0;
+}
+
+.home_three_topics_divider {
+    max-width: 2000px;
+    width: 3px;
+    background-color: #d3d3d3;
+}
+
+.home_trhee_topics_default {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+/* Social Media */
+
+.home_social_media_block {
+    display: inline-block;
+    cursor: pointer;
+    text-decoration: none;
+    color: black;
+}
+
+.home_social_media_block:hover {
+    color: #555555;
+}
+
+.home_social_media_block:active {
+    color: #555555;
+}
+
+.home_social_media_block:focus {
+    color: #555555;
+}
+
+.home_social_media {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 8rem;
+    padding: 2rem 0;
+}
+
+.home_social_media_item {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+}
+
+@media (width <= 1024px) {
+    .home_three_topics {
+        flex-direction: column;
+    }
+
+    .home_three_topics_divider {
+        height: 2px;
+        width: 100%;
+    }
+}
+
+@media (width < 768px) {
+    .home_container {
+        margin: 0 7.5%;
+    }
+
+    .home_hero_left_title {
+        margin: 1rem 0;
+    }
+
+    .home_hero_left_text {
+        margin: 1rem 0;
+    }
+
+    .home_hero_left_button {
+        margin: 1rem 0;
+    }
+
+    .home_hero {
+        flex-direction: column-reverse;
+    }
+    
+    .home_social_media {
+        flex-direction: column;
+        gap: 3rem;
+    }
+}

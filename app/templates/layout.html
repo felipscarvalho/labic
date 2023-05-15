@@ -8,6 +8,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link href="https://fonts.cdnfonts.com/css/neufreit" rel="stylesheet">
     <link href="{% static 'css/layout.css' %}" rel="stylesheet">
+    <link href="{% static 'css/globals.css' %}" rel="stylesheet">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter&display=swap" rel="stylesheet">
@@ -15,24 +16,46 @@
     {% endblock %}
 </head>
 <body>
-    <div class="container__layout__navbar_master">
-        <div class="container__layout__navbar">
-            <div class="layout__navbar__left__panel">
+    <nav class="container__layout__navbar_master">
+        <div class="container_layout_navbar_middle">
+            <div class="container__layout__navbar">
                 <h1 class="layout__navbar__logo__title">LABIC</h1>
+                <svg id="navbar-hamburguer" class="layout_navbar_hamburguer" width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M3 7H21M3 12H21M3 17H21" stroke="#44546F" stroke-width="1.5" stroke-linecap="round"/></svg>
+            </div>
+            <div id="navbar-left" class="layout__navbar__left__panel">
                 <div class="navbar__left__panel__items">
                     <ul class="navbar_left_panel_ul">
-                        <li class="navbar__left__panel__panel__ul__item"><a class="navbar__left__panel__panel__ul__anchor">Início</a></li>
-                        <li class="navbar__left__panel__panel__ul__item"><a class="navbar__left__panel__panel__ul__anchor">Membros</a></li>
-                        <li class="navbar__left__panel__panel__ul__item"><a class="navbar__left__panel__panel__ul__anchor">Artigos</a></li>
-                        <li class="navbar__left__panel__panel__ul__item"><a class="navbar__left__panel__panel__ul__anchor">Projetos</a></li>
-                        <li class="navbar__left__panel__panel__ul__item"><a class="navbar__left__panel__panel__ul__anchor">Contatos</a></li>
+                        <li id="home-li" class="navbar__left__panel__panel__ul__item"><div id="home-blank" class="navbar__left__panel__ul__blank"></div><a class="navbar__left__panel__panel__ul__anchor" href="{% url 'home' %}">Início</a><div id="home" class="navbar__left__panel__ul__selected"></div></li>
+                        <div class="container__layout__navbar_divider"></div>
+                        <li id="members-li" class="navbar__left__panel__panel__ul__item"><div id="members-blank" class="navbar__left__panel__ul__blank"></div><a class="navbar__left__panel__panel__ul__anchor" href="{% url 'members' %}">Membros</a><div id="members" class="navbar__left__panel__ul__selected"></div></li>
+                        <div class="container__layout__navbar_divider"></div>
+                        <li id="articles-li" class="navbar__left__panel__panel__ul__item"><div id="articles-blank" class="navbar__left__panel__ul__blank"></div><a class="navbar__left__panel__panel__ul__anchor" href="{% url 'articles' %}">Artigos</a><div id="articles" class="navbar__left__panel__ul__selected"></div></li>
+                        <div class="container__layout__navbar_divider"></div>
+                        <li id="projects-li" class="navbar__left__panel__panel__ul__item"><div id="projects-blank" class="navbar__left__panel__ul__blank"></div><a class="navbar__left__panel__panel__ul__anchor" href="{% url 'projects' %}">Projetos</a><div id="projects" class="navbar__left__panel__ul__selected"></div></li>
+                        <div class="container__layout__navbar_divider"></div>
+                        <li id="contact-li" class="navbar__left__panel__panel__ul__item"><div id="contact-blank" class="navbar__left__panel__ul__blank"></div><a class="navbar__left__panel__panel__ul__anchor" href="{% url 'contact' %}">Contatos</a><div id="contact" class="navbar__left__panel__ul__selected"></div></li>
+                        <div class="container__layout__navbar_divider"></div>
                     </ul>
                 </div>
+                <h1>Add</h1>
             </div>
         </div>
         <div class="container__layout__navbar_divider"></div>
-    </div>
+    </nav>
     {% block content %}
     {% endblock %}
+    <script>
+        let navbarState = 0;
+        document.querySelector('#navbar-hamburguer').addEventListener('click', () => {
+            if (navbarState === 0){
+                document.querySelector('#navbar-left').style.display = 'inline';
+                navbarState = 1
+            }
+            else{
+                document.querySelector('#navbar-left').style.display = 'none';
+                navbarState = 0
+            }
+        })
+    </script>
 </body>
 </html>

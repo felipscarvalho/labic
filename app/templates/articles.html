@@ -1,0 +1,55 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Labic - Artigos</title>
+    <link href="{% static 'css/app/articles.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="article_container">
+        <h1 class="article_title">Conheça Nossos Artigos!</h1>
+        <div class="article_item_container">
+            <img class="article_item_image" src="{% static 'img/articles_mockup.jpg' %}" alt="artigo">
+            <div class="article_item_info">
+                <h2 class="article_item_info_title">Drone Começa a Voar</h2>
+                <div class="article_item_info_author">
+                    <img class="article_item_info_author_profile" src="{% static 'img/blank_profile.png' %}" alt="autor">
+                    <p>Elton</p>
+                </div>
+                <p class="article_item_info_text">Um drone é uma aeronave não tripulada, que pode ser controlada por um piloto remoto ou por um computador programado para seguir um determinado percurso. Para entender como um drone voa, é preciso conhecer alguns conceitos bási...</p>
+                <p class="article_item_info_date"><b>Postado em: </b>27/02/2023</p>
+            </div>
+        </div>
+        <div class="article_item_container">
+            <img class="article_item_image" src="{% static 'img/articles_mockup.jpg' %}" alt="artigo">
+            <div class="article_item_info">
+                <h2 class="article_item_info_title">Drone Começa a Voar</h2>
+                <div class="article_item_info_author">
+                    <img class="article_item_info_author_profile" src="{% static 'img/blank_profile.png' %}" alt="autor">
+                    <p>Elton</p>
+                </div>
+                <p class="article_item_info_text">Um drone é uma aeronave não tripulada, que pode ser controlada por um piloto remoto ou por um computador programado para seguir um determinado percurso. Para entender como um drone voa, é preciso conhecer alguns conceitos bási...</p>
+                <p class="article_item_info_date"><b>Postado em: </b>27/02/2023</p>
+            </div>
+        </div>
+        <div class="article_item_container">
+            <img class="article_item_image" src="{% static 'img/articles_mockup.jpg' %}" alt="artigo">
+            <div class="article_item_info">
+                <h2 class="article_item_info_title">Drone Começa a Voar</h2>
+                <div class="article_item_info_author">
+                    <img class="article_item_info_author_profile" src="{% static 'img/blank_profile.png' %}" alt="autor">
+                    <p>Elton</p>
+                </div>
+                <p class="article_item_info_text">Um drone é uma aeronave não tripulada, que pode ser controlada por um piloto remoto ou por um computador programado para seguir um determinado percurso. Para entender como um drone voa, é preciso conhecer alguns conceitos bási...</p>
+                <p class="article_item_info_date"><b>Postado em: </b>27/02/2023</p>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#articles-blank').style.display = 'inline';
+        document.querySelector('#articles').style.display = 'inline';
+        document.querySelector('#articles-li').style.justifyContent = 'space-between';
+    </script>
+{% endblock %}

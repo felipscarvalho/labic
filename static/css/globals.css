@@ -1,0 +1,26 @@
+html {
+    scroll-behavior: smooth;
+}
+
+.base_button {
+    color: #fff;
+    background-color: #FF8D5C;
+    border: none;
+    padding: 12px;
+    border-radius: 6px;
+    cursor: pointer;
+    text-decoration: none;
+    display: inline-block;
+}
+
+.base_button:hover {
+    background-color: #c46b45;
+}
+
+.base_button:active {
+    background-color: #c46b45;
+}
+
+.base_button:focus {
+    background-color: #c46b45;
+}

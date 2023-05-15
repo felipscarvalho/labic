@@ -1,0 +1,94 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Labic - Membros</title>
+    <link rel="stylesheet" href="{% static 'css/app/members.css' %}">
+{% endblock %}
+
+{% block content %}
+    <div class="members_container">
+        <h1>Conheça Nossos Integrantes!</h1>
+        <div class="members_global">
+            <h2>Orientadores</h2>
+            <div class="members_global_child">
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+            </div>
+        </div>
+        <div class="members_global">
+            <h2>Bolsistas</h2>
+            <div class="members_global_child">
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+            </div>
+        </div>
+        <div class="members_global">
+            <h2>Voluntários</h2>
+            <div class="members_global_child">
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+                <div class="members_global_child_item">
+                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
+                    <h3>Stephanie Kamarry</h3>
+                    <p>Doutora em Robótica</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.querySelector('#members-blank').style.display = 'inline';
+        document.querySelector('#members').style.display = 'inline';
+        document.querySelector('#members-li').style.justifyContent = 'space-between';
+    </script>
+{% endblock %}

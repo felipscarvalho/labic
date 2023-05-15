@@ -1,0 +1,55 @@
+.article_container {
+    margin: 0 16%;
+}
+
+.article_title {
+    text-align: center;
+    padding: 2rem 0;
+}
+
+.article_item_container {
+    display: flex;
+    gap: 1rem;
+    padding: 2rem 0;
+}
+
+.article_item_image {
+    width: 32%;
+    height: auto;
+    border-radius: 16px;
+    object-fit: cover;
+}
+
+/* Article Item */
+
+.article_item_info {
+    display: flex;
+    flex-direction: column;
+    gap: .75rem;
+}
+
+.article_item_info_author {
+    display: flex;
+    align-items: center;
+    gap: .5rem;
+}
+
+.article_item_info_author_profile {
+    width: 2rem;
+    height: 2rem;   
+}
+
+@media (width < 768px) {
+    .article_container {
+        margin: 0 7.5%;
+    }
+
+    .article_item_container {
+        flex-direction: column;
+    }
+
+    .article_item_image {
+        width: 100%;
+        height: auto;
+    }
+}

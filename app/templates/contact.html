@@ -1,0 +1,17 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Labic - Contato</title>
+{% endblock %}
+
+{% block content %}
+    <h1>Olá</h1>
+    <a href="{% url 'home' %}">Início</a>
+
+    <script>
+        document.querySelector('#contact-blank').style.display = 'inline';
+        document.querySelector('#contact').style.display = 'inline';
+        document.querySelector('#contact-li').style.justifyContent = 'space-between';
+    </script>
+{% endblock %}
