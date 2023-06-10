@@ -12,78 +12,41 @@
         <div class="members_global">
             <h2>Orientadores</h2>
             <div class="members_global_child">
+                {% for membro in orientador  %}
                 <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
+                    <img class="members_global_child_item_image" src="{% get_media_prefix %}{{ membro.profile_photo }}" alt="blank">
+                    <h3>{{ membro }}</h3>
+                    <p>{{ membro.description }}</p>
                 </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
         <div class="members_global">
             <h2>Bolsistas</h2>
             <div class="members_global_child">
+                {% for membro in bolsista  %}
                 <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
+                    <img class="members_global_child_item_image" src="{% get_media_prefix %}{{ membro.profile_photo }}" alt="blank">
+                    <h3>{{ membro }}</h3>
+                    <p>{{ membro.description }}</p>
                 </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
+                {% endfor %}
             </div>
         </div>
-        <div class="members_global">
-            <h2>Voluntários</h2>
-            <div class="members_global_child">
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
-                </div>
-                <div class="members_global_child_item">
-                    <img class="members_global_child_item_image" src="{% static 'img/blank_profile.png' %}" alt="blank">
-                    <h3>Stephanie Kamarry</h3>
-                    <p>Doutora em Robótica</p>
+        {% if voluntario %}
+            <div class="members_global">
+                <h2>Voluntários</h2>
+                <div class="members_global_child">
+                    {% for membro in voluntario  %}
+                    <div class="members_global_child_item">
+                        <img class="members_global_child_item_image" src="{% get_media_prefix %}{{ membro.profile_photo }}" alt="blank">
+                        <h3>{{ membro }}</h3>
+                        <p>{{ membro.description }}</p>
+                    </div>
+                    {% endfor %}
                 </div>
             </div>
-        </div>
+        {% endif %}
     </div>
 
     <script>

@@ -9,42 +9,23 @@
 {% block content %}
     <div class="article_container">
         <h1 class="article_title">Conheça Nossos Artigos!</h1>
-        <div class="article_item_container">
-            <img class="article_item_image" src="{% static 'img/articles_mockup.jpg' %}" alt="artigo">
-            <div class="article_item_info">
-                <h2 class="article_item_info_title">Drone Começa a Voar</h2>
-                <div class="article_item_info_author">
-                    <img class="article_item_info_author_profile" src="{% static 'img/blank_profile.png' %}" alt="autor">
-                    <p>Elton</p>
+        {% for article in articles  %}
+            <a class="article_anchor_container" href="/article/{{article.id}}">
+                <div class="article_item_container">
+                    <img class="article_item_image" src="{% get_media_prefix %}{{ article.cover }}" alt="artigo">    
+                    <div class="article_item_info">
+                        <h2 class="article_item_info_title">{{ article.title|slice:":48" }}</h2>
+                        {% if article.project.title %}<p><strong>Projeto {{ article.project.title|slice:":32" }}</strong></p>{% endif %}
+                        <div class="article_item_info_author">
+                            <img class="article_item_info_author_profile" src="{% get_media_prefix %}{{ article.author.profile_photo }}" alt="autor">
+                            <p>{{ article.author }}</p>
+                        </div>
+                        <p class="article_item_info_text">{{ article.description|slice:":256" }}...</p>
+                        <p class="article_item_info_date"><b>Postado em: </b>{{ article.created_date }}</p>
+                    </div>
                 </div>
-                <p class="article_item_info_text">Um drone é uma aeronave não tripulada, que pode ser controlada por um piloto remoto ou por um computador programado para seguir um determinado percurso. Para entender como um drone voa, é preciso conhecer alguns conceitos bási...</p>
-                <p class="article_item_info_date"><b>Postado em: </b>27/02/2023</p>
-            </div>
-        </div>
-        <div class="article_item_container">
-            <img class="article_item_image" src="{% static 'img/articles_mockup.jpg' %}" alt="artigo">
-            <div class="article_item_info">
-                <h2 class="article_item_info_title">Drone Começa a Voar</h2>
-                <div class="article_item_info_author">
-                    <img class="article_item_info_author_profile" src="{% static 'img/blank_profile.png' %}" alt="autor">
-                    <p>Elton</p>
-                </div>
-                <p class="article_item_info_text">Um drone é uma aeronave não tripulada, que pode ser controlada por um piloto remoto ou por um computador programado para seguir um determinado percurso. Para entender como um drone voa, é preciso conhecer alguns conceitos bási...</p>
-                <p class="article_item_info_date"><b>Postado em: </b>27/02/2023</p>
-            </div>
-        </div>
-        <div class="article_item_container">
-            <img class="article_item_image" src="{% static 'img/articles_mockup.jpg' %}" alt="artigo">
-            <div class="article_item_info">
-                <h2 class="article_item_info_title">Drone Começa a Voar</h2>
-                <div class="article_item_info_author">
-                    <img class="article_item_info_author_profile" src="{% static 'img/blank_profile.png' %}" alt="autor">
-                    <p>Elton</p>
-                </div>
-                <p class="article_item_info_text">Um drone é uma aeronave não tripulada, que pode ser controlada por um piloto remoto ou por um computador programado para seguir um determinado percurso. Para entender como um drone voa, é preciso conhecer alguns conceitos bási...</p>
-                <p class="article_item_info_date"><b>Postado em: </b>27/02/2023</p>
-            </div>
-        </div>
+            </a>
+        {% endfor %}
     </div>
 
     <script>

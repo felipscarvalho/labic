@@ -1,0 +1,31 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Labic - Artigos</title>
+    <link href="{% static 'css/app/articles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/markdown.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="article_details_container">
+        <h1 class="article_details_title">{{ article.title }}</h1>
+        {% if article.project.title %}<a style="color: black; text-decoration: none;" href="/project/{{ article.project.id }}"><h2 style="margin: 0.25rem 0;">Projeto {{ article.project.title|slice:":32" }}</h2></a>{% endif %}
+        <div class="article_item_info_author">
+            <img class="article_item_info_author_profile article_item_info_author_profile_details" src="{% get_media_prefix %}{{ article.author.profile_photo }}" alt="autor">
+            <p>{{ article.author }} | {{ article.created_date }}</p>
+        </div>
+        
+        <p>{{ article.description }}</p>
+        <img class="article_details_item_image" src="{% get_media_prefix %}{{ article.cover }}" alt="artigo">
+        <hr></hr>
+        <div class="markdown">{{ article.formatted_markdown|safe}}</div>
+    </div>
+
+    <script>
+        document.querySelector('#articles-blank').style.display = 'inline';
+        document.querySelector('#articles').style.display = 'inline';
+        document.querySelector('#articles-li').style.justifyContent = 'space-between';
+    </script>
+{% endblock %}

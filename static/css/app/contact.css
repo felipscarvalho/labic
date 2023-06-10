@@ -1,0 +1,16 @@
+.container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    height: 94vh;
+    flex-direction: column;
+    gap: 1rem;
+    margin: 0;
+}
+
+a {
+    text-decoration: none;
+    list-style: none;
+    color: #fff;
+}

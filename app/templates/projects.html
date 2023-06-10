@@ -3,11 +3,29 @@
 
 {% block header %}
     <title>Labic - Projetos</title>
+    <link href="{% static 'css/app/projects.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <h1>Olá</h1>
-    <a href="{% url 'home' %}">Início</a>
+    <div class="projects-container">
+        <h1 class="projects-title">Conheça Nossos Projetos!</h1>
+        {% for project in projects  %}
+        <a class="project-anchor-container" href="/project/{{project.id}}">
+            <div class="project-item-container">
+                <img alt="cover_image" class="project-cover" src="{% get_media_prefix %}{{ project.cover }}"></img>
+                <div class="project-info-container">
+                    <h2 class="project-title">{{ project.title|slice:":48" }}</h2>
+                    <div class="project-author">
+                        <img alt="author_photo" class="project-author-photo" src="{% get_media_prefix %}{{ project.author.profile_photo }}">
+                        <p class="project-author-name">{{ project.author }}</p>
+                    </div>
+                    <p class="project-description">{{ project.description|slice:":256" }}</p>
+                    <p class="project-release-date"><strong>Iniciado em: </strong>{{ project.created_date }}</p>
+                </div>
+            </div>
+        </a>
+        {% endfor %}
+    </div>
 
     <script>
         document.querySelector('#projects-blank').style.display = 'inline';

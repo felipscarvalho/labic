@@ -3,11 +3,14 @@
 
 {% block header %}
     <title>Labic - Contato</title>
+    <link href="{% static 'css/app/contact.css' %}" rel="stylesheet">
 {% endblock %}
 
 {% block content %}
-    <h1>Olá</h1>
-    <a href="{% url 'home' %}">Início</a>
+    <div class='container'>
+        <h1>Esta página se encontra em desenvolvimento.</h1>
+        <button class='base_button'><a href="{% url 'home' %}">Início</a></button>
+    </div>
 
     <script>
         document.querySelector('#contact-blank').style.display = 'inline';

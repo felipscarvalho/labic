@@ -38,7 +38,8 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'app.apps.AppConfig'
+    'app.apps.AppConfig',
+    'markdownx'
 ]
 
 MIDDLEWARE = [
@@ -115,14 +116,67 @@ USE_I18N = True
 
 USE_TZ = True
 
+# MarkDown Config
+
+MARKDOWNX_MARKDOWN_EXTENSIONS = [
+    'markdown.extensions.extra',
+    'markdown.extensions.admonition',
+    'markdown.extensions.codehilite',
+    'markdown.extensions.legacy_attrs',
+    'markdown.extensions.legacy_em',
+    'markdown.extensions.meta',
+    'markdown.extensions.nl2br',
+    'markdown.extensions.sane_lists',
+    'markdown.extensions.smarty',
+    'markdown.extensions.toc',
+    'markdown.extensions.wikilinks',
+    'pymdownx.arithmatex',
+    'pymdownx.b64',
+    'pymdownx.betterem',
+    'pymdownx.blocks.admonition',
+    'pymdownx.blocks.definition',
+    'pymdownx.blocks.details',
+    'pymdownx.blocks.html',
+    'pymdownx.blocks.tab',
+    'pymdownx.caret',
+    'pymdownx.critic',
+    'pymdownx.caret',
+    'pymdownx.emoji',
+    'pymdownx.escapeall',
+    'pymdownx.extra',
+    'pymdownx.highlight',
+    'pymdownx.inlinehilite',
+    'pymdownx.keys',
+    'pymdownx.magiclink',
+    'pymdownx.mark',
+    'pymdownx.pathconverter',
+    'pymdownx.progressbar',
+    'pymdownx.saneheaders',
+    'pymdownx.smartsymbols',
+    'pymdownx.snippets',
+    'pymdownx.striphtml',
+    'pymdownx.superfences',
+    'pymdownx.tabbed',
+    'pymdownx.tasklist',
+    'pymdownx.tilde',
+    'customblocks'
+]
 
 # Static files (CSS, JavaScript, Images)
 # https://docs.djangoproject.com/en/4.1/howto/static-files/
 
-STATIC_URL = 'static/'
+AUTH_USER_MODEL = 'app.ExtendUser'
+
+STATIC_URL = '/static/'
 STATICFILES_DIRS = [
     os.path.join(BASE_DIR, 'static/')
 ]
+STATICFILES_ROOT = [
+    os.path.join(BASE_DIR, 'static/')
+]
+
+MEDIA_URL = '/media/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'media/')
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/4.1/ref/settings/#default-auto-field

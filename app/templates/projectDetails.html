@@ -1,0 +1,49 @@
+{% extends 'layout.html' %}
+{% load static %}
+
+{% block header %}
+    <title>Labic - Artigos</title>
+    <link href="{% static 'css/app/projects.css' %}" rel="stylesheet">
+    <link href="{% static 'css/styles.css' %}" rel="stylesheet">
+    <link href="{% static 'css/markdown.css' %}" rel="stylesheet">
+{% endblock %}
+
+{% block content %}
+    <div class="project-details-container">
+        <h1 class="project-details-title">{{ project.title }}</h1>
+        <div class="project-author">
+            <img class="project-author-photo" src="{% get_media_prefix %}{{ project.author.profile_photo }}" alt="author">
+            <p>{{ project.author }} | {{ project.created_date }}</p>
+        </div>
+        <p>{{ project.description }}</p>
+        <img class="project-cover project-details-cover" src="{% get_media_prefix %}{{ project.cover }}" alt="project">
+        <hr></hr>
+        <div class="markdown">{{ project.formatted_markdown|safe}}</div>
+        {% if articles %}
+            <hr style="margin-top: 1rem;">
+            <h2 style="margin: 1rem 0;">Artigos Relacionados</h2>
+            {% for article in articles  %}
+                <div>
+                    <a href="/article/{{ article.id }}" class="article-anchor">
+                        <section class="article-container">
+                            <img class="article-cover" src="{% get_media_prefix %}{{ article.cover }}" alt="article_cover"></img>
+                            <div class="article-info-container">
+                                <strong>{{ article.title|slice:":32" }}</strong>
+                                <p>{{ article.description|slice:":192" }}...</p>
+                                <div>
+                                    <p><strong>Postado em: </strong>{{ article.created_date }}</p>
+                                </div>
+                            </div>
+                        </section>
+                    </a>
+                </div>
+            {% endfor %}
+        {% endif %}
+    </div>
+
+    <script>
+        document.querySelector('#projects-blank').style.display = 'inline';
+        document.querySelector('#projects').style.display = 'inline';
+        document.querySelector('#projects-li').style.justifyContent = 'space-between';
+    </script>
+{% endblock %}
