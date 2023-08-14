@@ -22,7 +22,7 @@ class UserOptions(models.IntegerChoices):
 class ExtendUser(AbstractUser):
     profile_photo = models.ImageField(
         upload_to='profile/', default='defaults/profile_default.png')
-    description = models.CharField(max_length=128, blank=True)
+    description = models.CharField(max_length=224, blank=True)
     user_level = models.IntegerField(
         choices=UserOptions.choices, default=UserOptions.unknown)
 
