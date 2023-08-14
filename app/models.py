@@ -21,7 +21,7 @@ class UserOptions(models.IntegerChoices):
 
 class ExtendUser(AbstractUser):
     profile_photo = models.ImageField(
-        upload_to='profile/', default='profile/default.png')
+        upload_to='profile/', default='defaults/profile_default.png')
     description = models.CharField(max_length=32, blank=True)
     user_level = models.IntegerField(
         choices=UserOptions.choices, default=UserOptions.unknown)
@@ -35,7 +35,7 @@ class ExtendUser(AbstractUser):
 
 class Projects(models.Model):
     cover = models.ImageField(upload_to='projects/',
-                              default='projects/default.png')
+                              default='defaults/projects_default.png')
     title = models.CharField(max_length=255, default='Untitled')
     description = models.TextField(default='')
     author = models.ForeignKey(
@@ -58,7 +58,7 @@ class Projects(models.Model):
 
 class Articles(models.Model):
     cover = models.ImageField(upload_to='articles/',
-                              default='articles/default.png')
+                              default='defaults/articles_default.png')
     title = models.CharField(max_length=255, default='Untitled')
     description = models.TextField(default='')
     author = models.ForeignKey(
