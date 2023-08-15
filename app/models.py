@@ -67,7 +67,7 @@ class Articles(models.Model):
     post_status = models.IntegerField(
         choices=PostOptions.choices, default=PostOptions.private)
     project = models.ForeignKey(
-        Projects, on_delete=models.CASCADE, blank=True, null=True, default=None)
+        Projects, on_delete=models.CASCADE)
     created_date = models.DateField(auto_now_add=True)
 
     @property
