@@ -39,7 +39,7 @@ class Projects(models.Model):
     title = models.CharField(max_length=255, default='Untitled')
     description = models.TextField(default='')
     author = models.ForeignKey(
-        ExtendUser, on_delete=models.CASCADE)
+        ExtendUser, on_delete=models.CASCADE, blank=True, null=True, default=None)
     markdownFile = MarkdownxField()
     project_status = models.IntegerField(
         choices=PostOptions.choices, default=PostOptions.private)
@@ -67,7 +67,7 @@ class Articles(models.Model):
     post_status = models.IntegerField(
         choices=PostOptions.choices, default=PostOptions.private)
     project = models.ForeignKey(
-        Projects, on_delete=models.CASCADE)
+        Projects, on_delete=models.CASCADE, blank=True, null=True, default=None)
     created_date = models.DateField(auto_now_add=True)
 
     @property
