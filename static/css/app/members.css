@@ -33,6 +33,7 @@
 }
 
 .members_global_child_item_image {
+    object-fit: cover;
     width: 18.75rem;
     height: 18.75rem;
     border-radius: 256px;
