@@ -45,7 +45,7 @@ def projectDetails(request, id):
     project_id = Projects.objects.get(pk=id)
 
     articles = Articles.objects.all().filter(
-        project=project_id).order_by('id').reverse()
+        project=project_id).filter(post_status=1).order_by('id').reverse()
     print(articles, project_id)
 
     return render(request, 'projectDetails.html', {'project': project, 'articles': articles})
