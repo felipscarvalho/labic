@@ -28,7 +28,7 @@
                         <section class="article-container">
                             <img class="article-cover" src="{% get_media_prefix %}{{ article.cover }}" alt="article_cover"></img>
                             <div class="article-info-container">
-                                <strong>{{ article.title|slice:":32" }}</strong>
+                                <strong>{{ article.title }}</strong>
                                 <p>{{ article.description|slice:":192" }}...</p>
                                 <div>
                                     <p><strong>Postado em: </strong>{{ article.created_date }}</p>
